@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>blog – quiz_3</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">blog</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">Ash</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+<p><strong>This notebook is an exercise in the <a href="https://www.kaggle.com/learn/geospatial-analysis">Geospatial Analysis</a> course. You can reference the tutorial at <a href="https://www.kaggle.com/alexisbcook/interactive-maps">this link</a>.</strong></p>
+<hr>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>You are an urban safety planner in Japan, and you are analyzing which areas of Japan need extra earthquake reinforcement. Which areas are both high in population density and prone to earthquakes?</p>
+<center>
+<img src="https://storage.googleapis.com/kaggle-media/learn/images/Kuh9gPj.png" width="450"><br>
+</center>
+<p>Before you get started, run the code cell below to set everything up.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title: <span class="st">"Kaggle_Exercise_3"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>author: <span class="st">"young_ash"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>date: <span class="st">"2023-05-21"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>categories: [code, analysis]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>image: <span class="st">"image.jpg"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>This <span class="kw">is</span> a post <span class="cf">with</span> executable code.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:24.210704Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:24.210267Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:24.771093Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:24.769841Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:24.210671Z&quot;}" data-trusted="true" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> folium <span class="im">import</span> Choropleth</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> folium.plugins <span class="im">import</span> HeatMap</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> learntools.core <span class="im">import</span> binder</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>binder.bind(<span class="bu">globals</span>())</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> learntools.geospatial.ex3 <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We define a function <code>embed_map()</code> for displaying interactive maps. It accepts two arguments: the variable containing the map, and the name of the HTML file where the map will be saved.</p>
+<p>This function ensures that the maps are visible <a href="https://github.com/python-visualization/folium/issues/812">in all web browsers</a>.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:24.773869Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:24.773445Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:24.780650Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:24.779337Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:24.773831Z&quot;}" data-trusted="true" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> embed_map(m, file_name):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> IPython.display <span class="im">import</span> IFrame</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    m.save(file_name)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> IFrame(file_name, width<span class="op">=</span><span class="st">'100%'</span>, height<span class="op">=</span><span class="st">'500px'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<section id="do-earthquakes-coincide-with-plate-boundaries" class="level3">
+<h3 class="anchored" data-anchor-id="do-earthquakes-coincide-with-plate-boundaries">1) Do earthquakes coincide with plate boundaries?</h3>
+<p>Run the code cell below to create a DataFrame <code>plate_boundaries</code> that shows global plate boundaries. The “coordinates” column is a list of (latitude, longitude) locations along the boundaries.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:24.793226Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:24.792696Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:25.431122Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:25.430025Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:24.793182Z&quot;}" data-trusted="true" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plate_boundaries <span class="op">=</span> gpd.read_file(<span class="st">"../input/geospatial-learn-course-data/Plate_Boundaries/Plate_Boundaries/Plate_Boundaries.shp"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plate_boundaries[<span class="st">'coordinates'</span>] <span class="op">=</span> plate_boundaries.<span class="bu">apply</span>(<span class="kw">lambda</span> x: [(b,a) <span class="cf">for</span> (a,b) <span class="kw">in</span> <span class="bu">list</span>(x.geometry.coords)], axis<span class="op">=</span><span class="st">'columns'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plate_boundaries.drop(<span class="st">'geometry'</span>, axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plate_boundaries.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>HAZ_PLATES</th>
+      <th>HAZ_PLAT_1</th>
+      <th>HAZ_PLAT_2</th>
+      <th>Shape_Leng</th>
+      <th>coordinates</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>TRENCH</td>
+      <td>SERAM TROUGH (ACTIVE)</td>
+      <td>6722</td>
+      <td>5.843467</td>
+      <td>[(-5.444200361999947, 133.6808931800001), (-5....</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>TRENCH</td>
+      <td>WETAR THRUST</td>
+      <td>6722</td>
+      <td>1.829013</td>
+      <td>[(-7.760600482999962, 125.47879802900002), (-7...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>TRENCH</td>
+      <td>TRENCH WEST OF LUZON (MANILA TRENCH) NORTHERN ...</td>
+      <td>6621</td>
+      <td>6.743604</td>
+      <td>[(19.817899819000047, 120.09999798800004), (19...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>TRENCH</td>
+      <td>BONIN TRENCH</td>
+      <td>9821</td>
+      <td>8.329381</td>
+      <td>[(26.175899215000072, 143.20620700100005), (26...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>TRENCH</td>
+      <td>NEW GUINEA TRENCH</td>
+      <td>8001</td>
+      <td>11.998145</td>
+      <td>[(0.41880004000006466, 132.8273013480001), (0....</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Next, run the code cell below without changes to load the historical earthquake data into a DataFrame <code>earthquakes</code>.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:25.433807Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:25.432912Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:25.508250Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:25.506963Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:25.433764Z&quot;}" data-trusted="true" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data and print the first 5 rows</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>earthquakes <span class="op">=</span> pd.read_csv(<span class="st">"../input/geospatial-learn-course-data/earthquakes1970-2014.csv"</span>, parse_dates<span class="op">=</span>[<span class="st">"DateTime"</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>earthquakes.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>DateTime</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Depth</th>
+      <th>Magnitude</th>
+      <th>MagType</th>
+      <th>NbStations</th>
+      <th>Gap</th>
+      <th>Distance</th>
+      <th>RMS</th>
+      <th>Source</th>
+      <th>EventID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1970-01-04 17:00:40.200</td>
+      <td>24.139</td>
+      <td>102.503</td>
+      <td>31.0</td>
+      <td>7.5</td>
+      <td>Ms</td>
+      <td>90.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970010e+09</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1970-01-06 05:35:51.800</td>
+      <td>-9.628</td>
+      <td>151.458</td>
+      <td>8.0</td>
+      <td>6.2</td>
+      <td>Ms</td>
+      <td>85.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970011e+09</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1970-01-08 17:12:39.100</td>
+      <td>-34.741</td>
+      <td>178.568</td>
+      <td>179.0</td>
+      <td>6.1</td>
+      <td>Mb</td>
+      <td>59.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970011e+09</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1970-01-10 12:07:08.600</td>
+      <td>6.825</td>
+      <td>126.737</td>
+      <td>73.0</td>
+      <td>6.1</td>
+      <td>Mb</td>
+      <td>91.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NEI</td>
+      <td>1.970011e+09</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1970-01-16 08:05:39.000</td>
+      <td>60.280</td>
+      <td>-152.660</td>
+      <td>85.0</td>
+      <td>6.0</td>
+      <td>ML</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>AK</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The code cell below visualizes the plate boundaries on a map. Use all of the earthquake data to add a heatmap to the same map, to determine whether earthquakes coincide with plate boundaries.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:31.748438Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:31.747988Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:32.520776Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:32.519564Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:31.748403Z&quot;}" data-trusted="true" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a base map with plate boundaries</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>m_1 <span class="op">=</span> folium.Map(location<span class="op">=</span>[<span class="dv">35</span>,<span class="dv">136</span>], tiles<span class="op">=</span><span class="st">'cartodbpositron'</span>, zoom_start<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(plate_boundaries)):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    folium.PolyLine(locations<span class="op">=</span>plate_boundaries.coordinates.iloc[i], weight<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'black'</span>).add_to(m_1)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here: Add a heatmap to the map</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>HeatMap(data<span class="op">=</span>earthquakes[[<span class="st">'Latitude'</span>, <span class="st">'Longitude'</span>]], radius<span class="op">=</span><span class="dv">15</span>).add_to(m_1)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see a hint</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#q_1.a.hint()</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the map</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>embed_map(m_1, <span class="st">'q_1.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+
+        <iframe width="100%" height="500px" src="q_1.html" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:25.513821Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:25.510018Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:25.532230Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:25.531088Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:25.513762Z&quot;}" data-trusted="true" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get credit for your work after you have created a map</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>q_1.a.check()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see our solution (your code may look different!)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>q_1.a.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"outcomeType": 1, "valueTowardsCompletion": 1.0, "interactionType": 1, "questionType": 2, "questionId": "1.1_Q1P", "learnToolsVersion": "0.3.4", "failureMessage": "", "exceptionClass": "", "trace": ""}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc33">Thank you for creating a map!</span></p>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"interactionType": 3, "questionType": 2, "questionId": "1.1_Q1P", "learnToolsVersion": "0.3.4", "valueTowardsCompletion": 0.0, "failureMessage": "", "exceptionClass": "", "trace": "", "outcomeType": 4}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc99">Solution:</span></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a heatmap to the map</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>HeatMap(data<span class="op">=</span>earthquakes[[<span class="st">'Latitude'</span>, <span class="st">'Longitude'</span>]], radius<span class="op">=</span><span class="dv">15</span>).add_to(m_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>So, given the map above, do earthquakes coincide with plate boundaries?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the solution (Run this code cell to receive credit!)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>q_1.b.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="is-there-a-relationship-between-earthquake-depth-and-proximity-to-a-plate-boundary-in-japan" class="level3">
+<h3 class="anchored" data-anchor-id="is-there-a-relationship-between-earthquake-depth-and-proximity-to-a-plate-boundary-in-japan">2) Is there a relationship between earthquake depth and proximity to a plate boundary in Japan?</h3>
+<p>You recently read that the depth of earthquakes tells us <a href="https://www.usgs.gov/faqs/what-depth-do-earthquakes-occur-what-significance-depth?qt-news_science_products=0#qt-news_science_products">important information</a> about the structure of the earth. You’re interested to see if there are any intereresting global patterns, and you’d also like to understand how depth varies in Japan.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:47.796877Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:47.796233Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:54.825559Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:54.824415Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:47.796845Z&quot;}" data-trusted="true" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a base map with plate boundaries</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>m_2 <span class="op">=</span> folium.Map(location<span class="op">=</span>[<span class="dv">35</span>,<span class="dv">136</span>], tiles<span class="op">=</span><span class="st">'cartodbpositron'</span>, zoom_start<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(plate_boundaries)):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    folium.PolyLine(locations<span class="op">=</span>plate_boundaries.coordinates.iloc[i], weight<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'black'</span>).add_to(m_2)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here: Add a map to visualize earthquake depth</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom function to assign a color to each circle</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> color_producer(val):</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">50</span>:</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'forestgreen'</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> val <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'darkorange'</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'darkred'</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a map to visualize earthquake depth</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(earthquakes)):</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    folium.Circle(</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[earthquakes.iloc[i][<span class="st">'Latitude'</span>], earthquakes.iloc[i][<span class="st">'Longitude'</span>]],</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        radius<span class="op">=</span><span class="dv">2000</span>,</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>color_producer(earthquakes.iloc[i][<span class="st">'Depth'</span>])).add_to(m_2)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see a hint</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co">#q_2.a.hint()</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="co"># View the map</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>embed_map(m_2, <span class="st">'q_2.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+
+        <iframe width="100%" height="500px" src="q_2.html" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:38.968164Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:38.967720Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:38.982725Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:38.981034Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:38.968128Z&quot;}" data-trusted="true" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get credit for your work after you have created a map</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>q_2.a.check()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see our solution (your code may look different!)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>q_2.a.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"outcomeType": 1, "valueTowardsCompletion": 1.0, "interactionType": 1, "questionType": 2, "questionId": "2.1_Q2P", "learnToolsVersion": "0.3.4", "failureMessage": "", "exceptionClass": "", "trace": ""}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc33">Thank you for creating a map!</span></p>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"interactionType": 3, "questionType": 2, "questionId": "2.1_Q2P", "learnToolsVersion": "0.3.4", "valueTowardsCompletion": 0.0, "failureMessage": "", "exceptionClass": "", "trace": "", "outcomeType": 4}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc99">Solution:</span></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom function to assign a color to each circle</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> color_producer(val):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">50</span>:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'forestgreen'</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> val <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'darkorange'</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'darkred'</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a map to visualize earthquake depth</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(earthquakes)):</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    folium.Circle(</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[earthquakes.iloc[i][<span class="st">'Latitude'</span>], earthquakes.iloc[i][<span class="st">'Longitude'</span>]],</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        radius<span class="op">=</span><span class="dv">2000</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>color_producer(earthquakes.iloc[i][<span class="st">'Depth'</span>])).add_to(m_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Can you detect a relationship between proximity to a plate boundary and earthquake depth? Does this pattern hold globally? In Japan?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the solution (Run this code cell to receive credit!)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>q_2.b.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="which-prefectures-have-high-population-density" class="level3">
+<h3 class="anchored" data-anchor-id="which-prefectures-have-high-population-density">3) Which prefectures have high population density?</h3>
+<p>Run the next code cell (without changes) to create a GeoDataFrame <code>prefectures</code> that contains the geographical boundaries of Japanese prefectures.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:54.827710Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:54.827347Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:55.933947Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:55.932884Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:54.827680Z&quot;}" data-trusted="true" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># GeoDataFrame with prefecture boundaries</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>prefectures <span class="op">=</span> gpd.read_file(<span class="st">"../input/geospatial-learn-course-data/japan-prefecture-boundaries/japan-prefecture-boundaries/japan-prefecture-boundaries.shp"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>prefectures.set_index(<span class="st">'prefecture'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>prefectures.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>geometry</th>
+    </tr>
+    <tr>
+      <th>prefecture</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aichi</th>
+      <td>MULTIPOLYGON (((137.09523 34.65330, 137.09546 ...</td>
+    </tr>
+    <tr>
+      <th>Akita</th>
+      <td>MULTIPOLYGON (((139.55725 39.20330, 139.55765 ...</td>
+    </tr>
+    <tr>
+      <th>Aomori</th>
+      <td>MULTIPOLYGON (((141.39860 40.92472, 141.39806 ...</td>
+    </tr>
+    <tr>
+      <th>Chiba</th>
+      <td>MULTIPOLYGON (((139.82488 34.98967, 139.82434 ...</td>
+    </tr>
+    <tr>
+      <th>Ehime</th>
+      <td>MULTIPOLYGON (((132.55859 32.91224, 132.55904 ...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The next code cell creates a DataFrame <code>stats</code> containing the population, area (in square kilometers), and population density (per square kilometer) for each Japanese prefecture. Run the code cell without changes.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:30:59.110128Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:30:59.109533Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:30:59.369088Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:30:59.367930Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:30:59.110006Z&quot;}" data-trusted="true" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame containing population of each prefecture</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> pd.read_csv(<span class="st">"../input/geospatial-learn-course-data/japan-prefecture-population.csv"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>population.set_index(<span class="st">'prefecture'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate area (in square kilometers) of each prefecture</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>area_sqkm <span class="op">=</span> pd.Series(prefectures.geometry.to_crs(epsg<span class="op">=</span><span class="dv">32654</span>).area <span class="op">/</span> <span class="dv">10</span><span class="op">**</span><span class="dv">6</span>, name<span class="op">=</span><span class="st">'area_sqkm'</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> population.join(area_sqkm)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add density (per square kilometer) of each prefecture</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>stats[<span class="st">'density'</span>] <span class="op">=</span> stats[<span class="st">"population"</span>] <span class="op">/</span> stats[<span class="st">"area_sqkm"</span>]</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>stats.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>population</th>
+      <th>area_sqkm</th>
+      <th>density</th>
+    </tr>
+    <tr>
+      <th>prefecture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tokyo</th>
+      <td>12868000</td>
+      <td>1800.614782</td>
+      <td>7146.448049</td>
+    </tr>
+    <tr>
+      <th>Kanagawa</th>
+      <td>8943000</td>
+      <td>2383.038975</td>
+      <td>3752.771186</td>
+    </tr>
+    <tr>
+      <th>Osaka</th>
+      <td>8801000</td>
+      <td>1923.151529</td>
+      <td>4576.342460</td>
+    </tr>
+    <tr>
+      <th>Aichi</th>
+      <td>7418000</td>
+      <td>5164.400005</td>
+      <td>1436.372085</td>
+    </tr>
+    <tr>
+      <th>Saitama</th>
+      <td>7130000</td>
+      <td>3794.036890</td>
+      <td>1879.264806</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Use the next code cell to create a choropleth map to visualize population density.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:31:10.475437Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:31:10.475035Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:31:20.925683Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:31:20.924607Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:31:10.475406Z&quot;}" data-trusted="true" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a base map</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>m_3 <span class="op">=</span> folium.Map(location<span class="op">=</span>[<span class="dv">35</span>,<span class="dv">136</span>], tiles<span class="op">=</span><span class="st">'cartodbpositron'</span>, zoom_start<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>Choropleth(geo_data<span class="op">=</span>prefectures[<span class="st">'geometry'</span>].__geo_interface__,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>           data<span class="op">=</span>stats[<span class="st">'density'</span>],</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>           key_on<span class="op">=</span><span class="st">"feature.id"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>           fill_color<span class="op">=</span><span class="st">'YlGnBu'</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>           legend_name<span class="op">=</span><span class="st">'Population density (per square kilometer)'</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>          ).add_to(m_3)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see a hint</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">#q_3.a.hint()</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># View the map</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>embed_map(m_3, <span class="st">'q_3.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+
+        <iframe width="100%" height="500px" src="q_3.html" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:31:03.982321Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:31:03.981596Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:31:03.999454Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:31:03.998179Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:31:03.982271Z&quot;}" data-trusted="true" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get credit for your work after you have created a map</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>q_3.a.check()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see our solution (your code may look different!)</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>q_3.a.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"outcomeType": 1, "valueTowardsCompletion": 1.0, "interactionType": 1, "questionType": 2, "questionId": "3.1_Q3P", "learnToolsVersion": "0.3.4", "failureMessage": "", "exceptionClass": "", "trace": ""}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc33">Thank you for creating a map!</span></p>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"interactionType": 3, "questionType": 2, "questionId": "3.1_Q3P", "learnToolsVersion": "0.3.4", "valueTowardsCompletion": 0.0, "failureMessage": "", "exceptionClass": "", "trace": "", "outcomeType": 4}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc99">Solution:</span></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a choropleth map to visualize population density</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>Choropleth(geo_data<span class="op">=</span>prefectures[<span class="st">'geometry'</span>].__geo_interface__,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>           data<span class="op">=</span>stats[<span class="st">'density'</span>],</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>           key_on<span class="op">=</span><span class="st">"feature.id"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>           fill_color<span class="op">=</span><span class="st">'YlGnBu'</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>           legend_name<span class="op">=</span><span class="st">'Population density (per square kilometer)'</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>          ).add_to(m_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Which three prefectures have relatively higher density than the others? Are they spread throughout the country, or all located in roughly the same geographical region? (<em>If you’re unfamiliar with Japanese geography, you might find <a href="https://en.wikipedia.org/wiki/Prefectures_of_Japan">this map</a> useful to answer the questions.)</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the solution (Run this code cell to receive credit!)</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>q_3.b.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="which-high-density-prefecture-is-prone-to-high-magnitude-earthquakes" class="level3">
+<h3 class="anchored" data-anchor-id="which-high-density-prefecture-is-prone-to-high-magnitude-earthquakes">4) Which high-density prefecture is prone to high-magnitude earthquakes?</h3>
+<p>Create a map to suggest one prefecture that might benefit from earthquake reinforcement. Your map should visualize both density and earthquake magnitude.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:31:31.378019Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:31:31.377636Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:31:55.873629Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:31:55.872245Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:31:31.377981Z&quot;}" data-trusted="true" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a base map</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>m_4 <span class="op">=</span> folium.Map(location<span class="op">=</span>[<span class="dv">35</span>,<span class="dv">136</span>], tiles<span class="op">=</span><span class="st">'cartodbpositron'</span>, zoom_start<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here: create a map</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a map</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> color_producer(magnitude):</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> magnitude <span class="op">&gt;</span> <span class="fl">6.5</span>:</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'red'</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'green'</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>Choropleth(</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    geo_data<span class="op">=</span>prefectures[<span class="st">'geometry'</span>].__geo_interface__,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>stats[<span class="st">'density'</span>],</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    key_on<span class="op">=</span><span class="st">"feature.id"</span>,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    fill_color<span class="op">=</span><span class="st">'BuPu'</span>,</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    legend_name<span class="op">=</span><span class="st">'Population density (per square kilometer)'</span>).add_to(m_4)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(earthquakes)):</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    folium.Circle(</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[earthquakes.iloc[i][<span class="st">'Latitude'</span>], earthquakes.iloc[i][<span class="st">'Longitude'</span>]],</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        popup<span class="op">=</span>(<span class="st">"</span><span class="sc">{}</span><span class="st"> (</span><span class="sc">{}</span><span class="st">)"</span>).<span class="bu">format</span>(</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>            earthquakes.iloc[i][<span class="st">'Magnitude'</span>],</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>            earthquakes.iloc[i][<span class="st">'DateTime'</span>].year),</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>        radius<span class="op">=</span>earthquakes.iloc[i][<span class="st">'Magnitude'</span>]<span class="op">**</span><span class="fl">5.5</span>,</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>color_producer(earthquakes.iloc[i][<span class="st">'Magnitude'</span>])).add_to(m_4)</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see a hint</span></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="co">#q_4.a.hint()</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="co"># View the map</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>embed_map(m_4, <span class="st">'q_4.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+
+        <iframe width="100%" height="500px" src="q_4.html" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-05-21T11:31:21.638702Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-05-21T11:31:21.638305Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-05-21T11:31:21.652725Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-05-21T11:31:21.651757Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-05-21T11:31:21.638672Z&quot;}" data-trusted="true" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get credit for your work after you have created a map</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>q_4.a.check()</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment to see our solution (your code may look different!)</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>q_4.a.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"outcomeType": 1, "valueTowardsCompletion": 1.0, "interactionType": 1, "questionType": 2, "questionId": "4.1_Q4P", "learnToolsVersion": "0.3.4", "failureMessage": "", "exceptionClass": "", "trace": ""}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc33">Thank you for creating a map!</span></p>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+parent.postMessage({"jupyterEvent": "custom.exercise_interaction", "data": {"interactionType": 3, "questionType": 2, "questionId": "4.1_Q4P", "learnToolsVersion": "0.3.4", "valueTowardsCompletion": 0.0, "failureMessage": "", "exceptionClass": "", "trace": "", "outcomeType": 4}}, "*")
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<p><span style="color:#33cc99">Solution:</span></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a map</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> color_producer(magnitude):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> magnitude <span class="op">&gt;</span> <span class="fl">6.5</span>:</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'red'</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'green'</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>Choropleth(</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    geo_data<span class="op">=</span>prefectures[<span class="st">'geometry'</span>].__geo_interface__,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>stats[<span class="st">'density'</span>],</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    key_on<span class="op">=</span><span class="st">"feature.id"</span>,</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    fill_color<span class="op">=</span><span class="st">'BuPu'</span>,</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    legend_name<span class="op">=</span><span class="st">'Population density (per square kilometer)'</span>).add_to(m_4)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="bu">len</span>(earthquakes)):</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    folium.Circle(</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        location<span class="op">=</span>[earthquakes.iloc[i][<span class="st">'Latitude'</span>], earthquakes.iloc[i][<span class="st">'Longitude'</span>]],</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        popup<span class="op">=</span>(<span class="st">"</span><span class="sc">{}</span><span class="st"> (</span><span class="sc">{}</span><span class="st">)"</span>).<span class="bu">format</span>(</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>            earthquakes.iloc[i][<span class="st">'Magnitude'</span>],</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>            earthquakes.iloc[i][<span class="st">'DateTime'</span>].year),</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>        radius<span class="op">=</span>earthquakes.iloc[i][<span class="st">'Magnitude'</span>]<span class="op">**</span><span class="fl">5.5</span>,</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>color_producer(earthquakes.iloc[i][<span class="st">'Magnitude'</span>])).add_to(m_4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Which prefecture do you recommend for extra earthquake reinforcement?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View the solution (Run this code cell to receive credit!)</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>q_4.b.solution()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="keep-going" class="level1">
+<h1>Keep going</h1>
+<p>Learn how to convert names of places to geographic coordinates with <strong><a href="https://www.kaggle.com/alexisbcook/manipulating-geospatial-data">geocoding</a></strong>. You’ll also explore special ways to join information from multiple GeoDataFrames.</p>
+<hr>
+<p><em>Have questions or comments? Visit the <a href="https://www.kaggle.com/learn/geospatial-analysis/discussion">course discussion forum</a> to chat with other learners.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
